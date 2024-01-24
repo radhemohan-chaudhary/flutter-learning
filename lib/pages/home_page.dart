@@ -14,8 +14,7 @@ class Homepage extends StatelessWidget {
             fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
-          ),
-          backgroundColor: Color(0xffffcc00),
+           ),
         ),
         body: Center(
           child: Container(
