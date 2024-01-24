@@ -22,14 +22,14 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      
+      initialRoute: MyRoutes.homeRoute,
+      debugShowCheckedModeBanner: false,
     routes: {
-      "/":(context) => LoginPage(),
       MyRoutes.homeRoute:(context) => Homepage(),
       MyRoutes.loginRoute:(context) => LoginPage(),
       MyRoutes.orderhistoryRoute:(context) => OrderHistory(),
       },
-
+      
     );
   }
 }
