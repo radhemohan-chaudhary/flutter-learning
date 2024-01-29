@@ -1,64 +1,111 @@
 
-import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_0/models/catalog.dart';
-import 'package:flutter_application_0/widgets/drawer.dart';
-import 'package:flutter_application_0/widgets/item_widget.dart';
+import 'package:flutter_application_0/utils/routess.dart';
+import 'package:flutter_application_0/widgets/AppBarWidget.dart';
 
-class Homepage extends StatefulWidget {
+
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
-}
 
-class _HomepageState extends State<Homepage> {
-  @override
-
-   void initState(){
-    super.initState();
-    loadData();
-
-   }
-
-   loadData() async{
-   final catalogjson= await rootBundle.loadString("assets/files/catalog.json");
-   final decodedData=jsonDecode(catalogjson);
-   var productData=decodedData["products"];
-   CatalogModel.items= List.from(productData).map<Item>((item)=>Item.fromMap(item)).toList();
-   setState(() {
-     
-   });
-   
-   }
 
   Widget build(BuildContext context) {
     
     return  Scaffold(
       backgroundColor: Color(0xffffcc00),
-        appBar: AppBar(
-          title: Text("My Cart",
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
-           ),
+       
+        body:ListView(
+         
+          children:[
+            AppBarWidget(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 15,
+            vertical: 10
+            ),
+            child: Container(
+              width: double.infinity,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  )
+                ]
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Row(children: [
+                  Icon(CupertinoIcons.search,
+                  color: Color(0xff968b7b),
+                  ),
+                  Container(
+                    height: 60,
+                    width: 300,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 15,
+
+                        ),
+                        
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            hintText: "Find what you want...",
+                            border: InputBorder.none,
+                          ),
+                        ),
+                    
+                    ),
+
+                  ),
+                ]),
+                ),
+            ),
+            )
+
+
+
+          ]
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ListView.builder(
-            itemCount: CatalogModel.items.length,
-            itemBuilder:(context,index){
-              return ItemWidget( 
-                item: CatalogModel.items[index],
-              );
-            },
+        floatingActionButton: Container(
+          height: 80,
+          width: 80,
+          decoration: BoxDecoration(
+                color: Colors.white,
+                 borderRadius: BorderRadius.circular(60),
+                 boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  )
+
+                 ],
+              ),
+              child:FloatingActionButton(
+          shape: CircleBorder(),
+          backgroundColor: Color(0xff4a2828),
+          onPressed:()=>Navigator.pushNamed(context, MyRoutes.cartRoute),
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
           ),
+        
         ),
-        drawer: MyDrawer(),
-      
+        
+        )
       );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_0/widgets/HistoryBarWedget.dart';
+import 'package:flutter_application_0/widgets/CartBarWidget.dart';
 
-class Order_History extends StatelessWidget {
-  const Order_History({super.key});
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +11,16 @@ class Order_History extends StatelessWidget {
       backgroundColor: Color(0xffffcc00),
       body: ListView(
         children: [
-          HistoryBarWedget(),
+          CartBarWidget(),
           SizedBox(
             height: 600,
             width: double.infinity,
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Container(
                   child: Text(
-                    "Taste your tasteful history in this exclusive zone.",
+                    "Cart's empty,keep feasting!...",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
@@ -36,5 +36,3 @@ class Order_History extends StatelessWidget {
     );
   }
 }
-
-HistoryBarWidget() {}
