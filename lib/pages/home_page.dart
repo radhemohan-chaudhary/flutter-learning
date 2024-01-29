@@ -1,111 +1,131 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_application_0/utils/routess.dart';
-import 'package:flutter_application_0/widgets/AppBarWidget.dart';
+import 'package:flutter_application_0/pages/first.dart';
 
-
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
-
+class homepage extends StatelessWidget {
+  const homepage({super.key});
   @override
-
-
   Widget build(BuildContext context) {
-    
-    return  Scaffold(
-      backgroundColor: Color(0xffffcc00),
-       
-        body:ListView(
-         
-          children:[
-            AppBarWidget(),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 15,
-            vertical: 10
-            ),
-            child: Container(
-              width: double.infinity,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 3),
-                  )
-                ]
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                ),
-                child: Row(children: [
-                  Icon(CupertinoIcons.search,
-                  color: Color(0xff968b7b),
-                  ),
-                  Container(
-                    height: 60,
-                    width: 300,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 15,
-
-                        ),
-                        
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            hintText: "Find what you want...",
-                            border: InputBorder.none,
-                          ),
-                        ),
-                    
-                    ),
-
-                  ),
-                ]),
-                ),
-            ),
-            )
-
-
-
-          ]
+    return Scaffold(
+        backgroundColor: Color(0xffffcb01),
+        appBar: AppBar(
+          backgroundColor: Color(0xffffcb01),
         ),
-        floatingActionButton: Container(
-          height: 80,
-          width: 80,
-          decoration: BoxDecoration(
-                color: Colors.white,
-                 borderRadius: BorderRadius.circular(60),
-                 boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 3),
-                  )
-
-                 ],
-              ),
-              child:FloatingActionButton(
-          shape: CircleBorder(),
-          backgroundColor: Color(0xff4a2828),
-          onPressed:()=>Navigator.pushNamed(context, MyRoutes.cartRoute),
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white,
+        body: ListView(padding: EdgeInsets.all(20), children: [
+          Padding(padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5)),
+          Image.asset(
+            "assets/images/log.png",
+            height: 200,
+            width: 200,
           ),
-        
-        ),
-        
-        )
-      );
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(40)),
+              Text(
+                "Welcome",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(10)),
+              Text("Email", style: TextStyle(fontSize: 15)),
+            ],
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+                prefixIcon: Icon(Icons.email_outlined),
+                hintText: ("Enter your username"),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                filled: true,
+                fillColor: Colors.white,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: BorderSide(color: Colors.white))),
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(10)),
+              Text("Password", style: TextStyle(fontSize: 15)),
+            ],
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+                prefixIcon: Icon(Icons.email_outlined),
+                hintText: ("Enter your password"),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                filled: true,
+                fillColor: Colors.white,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: BorderSide(color: Colors.white))),
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(10)),
+              Text("Forgot Password?", style: TextStyle(fontSize: 15)),
+            ],
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => firstapp(),
+                    ));
+              },
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size(400, 45),
+                primary: Color.fromARGB(255, 232, 149, 149),
+                onPrimary: Colors.white,
+              ),
+              child: Text("Log In")),
+          SizedBox(height: 8),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => firstapp(),
+                  ));
+            },
+            style: ElevatedButton.styleFrom(
+              // fixedSize: Size(100, 45),
+              onPrimary: Colors.black,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Log in with"),
+                SizedBox(
+                  width: 10,
+                ),
+                Image.asset("assets/images/gmail.png", height: 20, width: 20),
+              ],
+            ),
+          ),
+          const Divider(
+            color: Colors.white,
+            height: 20,
+            thickness: 2,
+          ),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.fromLTRB(70, 10, 20, 30)),
+              Text("No account?", style: TextStyle(fontSize: 13)),
+              SizedBox(width: 3),
+              Text("Sign up",
+                  style: TextStyle(
+                      fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+            ],
+          ),
+        ]));
   }
 }
