@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_0/pages/home_page.dart';
-import 'package:flutter_application_0/widgets/UserBarWidget.dart';
+
+import 'package:flutter_application_0/utils/routess.dart';
+import 'package:flutter_application_0/widgets/SettingBarWidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
-class account2 extends StatelessWidget {
-  const account2({super.key});
+class pverification extends StatelessWidget {
+  const pverification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class account2 extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: ListView(
             children: [
-              UserBarWidget(),
+              settingBarWidget(),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(height: 140),
                 Text("Enter the verification code",
@@ -65,18 +66,15 @@ class account2 extends StatelessWidget {
                       ),
                       ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => homepage(),
-                                ));
+                            Navigator.pushNamed(
+                                context, MyRoutes.psuccessRoute);
                           },
                           style: ElevatedButton.styleFrom(
                             fixedSize: Size(200, 45),
                             primary: Color.fromARGB(255, 232, 149, 149),
                             onPrimary: Colors.white,
                           ),
-                          child: Text("Confirm")),
+                          child: Text("Conform")),
                     ],
                   ),
                 ),

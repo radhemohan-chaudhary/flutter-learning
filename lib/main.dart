@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_0/pages/Order_History.dart';
 import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/acc2.dart';
+import 'package:flutter_application_0/pages/address.dart';
 import 'package:flutter_application_0/pages/cart.dart';
 import 'package:flutter_application_0/pages/first.dart';
 import 'package:flutter_application_0/pages/hello.dart';
 import 'package:flutter_application_0/pages/home_page.dart';
+import 'package:flutter_application_0/pages/pchange.dart';
 import 'package:flutter_application_0/pages/personal.dart';
+import 'package:flutter_application_0/pages/psuccess.dart';
+import 'package:flutter_application_0/pages/pverification.dart';
+import 'package:flutter_application_0/pages/setting.dart';
+import 'package:flutter_application_0/pages/user.dart';
 import 'package:flutter_application_0/utils/routess.dart';
 import 'package:flutter_application_0/pages/notification.dart';
 import 'package:flutter_application_0/widgets/themes.dart';
@@ -36,6 +42,12 @@ class MyApp extends StatelessWidget {
         MyRoutes.accountRoute: (context) => account1(),
         MyRoutes.verificationRoute: (context) => account2(),
         MyRoutes.firstappRoute: (context) => firstapp(),
+        MyRoutes.userRoute: (context) => user(),
+        MyRoutes.addressRoute: (context) => address(),
+        MyRoutes.settingRoute: (context) => setting(),
+        MyRoutes.pchangeRoute: (context) => pchange(),
+        MyRoutes.pverificationRoute: (context) => pverification(),
+        MyRoutes.psuccessRoute: (context) => psuccess()
       },
     );
     return materialApp;

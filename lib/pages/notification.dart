@@ -18,7 +18,7 @@ class NotificationPage extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

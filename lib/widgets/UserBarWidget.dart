@@ -1,16 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HistoryBarWedget extends StatelessWidget {
-  const HistoryBarWedget({super.key});
+class UserBarWidget extends StatelessWidget {
+  const UserBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        padding: EdgeInsets.symmetric(horizontal: 0),
+        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -34,18 +32,6 @@ class HistoryBarWedget extends StatelessWidget {
               child: Icon(CupertinoIcons.arrow_left),
             ),
           ),
-          Text(
-            "Order History",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(
-            width: 60,
-          )
-        ],
-      ),
-    );
+        ]));
   }
 }

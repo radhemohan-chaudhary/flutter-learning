@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HistoryBarWedget extends StatelessWidget {
-  const HistoryBarWedget({super.key});
+class CreateBarWedget extends StatelessWidget {
+  const CreateBarWedget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      padding: EdgeInsets.symmetric(
+        vertical: 15,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -35,7 +37,7 @@ class HistoryBarWedget extends StatelessWidget {
             ),
           ),
           Text(
-            "Order History",
+            "Create account",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,

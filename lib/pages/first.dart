@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_0/utils/routess.dart';
 
 class firstapp extends StatelessWidget {
   const firstapp({super.key});
@@ -15,10 +16,29 @@ class firstapp extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: ListView(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset("assets/images/first.jpg",
-                    width: 300.0, height: 180.0, fit: BoxFit.cover),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.helloRoute);
+                },
+                child: Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/first.jpg"),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      )
+                    ],
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 5),
@@ -28,10 +48,29 @@ class firstapp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 6),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset("assets/images/second.jpg",
-                    width: 300.0, height: 180.0, fit: BoxFit.cover),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.helloRoute);
+                },
+                child: Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/second.jpg"),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      )
+                    ],
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 5),
@@ -41,10 +80,29 @@ class firstapp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 6),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset("assets/images/third.png",
-                    width: 300.0, height: 180.0, fit: BoxFit.cover),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.helloRoute);
+                },
+                child: Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/third.png"),
+                        fit: BoxFit.cover),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      )
+                    ],
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 0),
@@ -67,3 +125,5 @@ class firstapp extends StatelessWidget {
     );
   }
 }
+
+class RaisedButton {}

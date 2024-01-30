@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/first.dart';
 
 class homepage extends StatelessWidget {
@@ -10,7 +11,8 @@ class homepage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color(0xffffcb01),
         ),
-        body: ListView(padding: EdgeInsets.all(20), children: [
+        body:
+            ListView(padding: EdgeInsets.symmetric(horizontal: 30), children: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5)),
           Image.asset(
             "assets/images/log.png",
@@ -18,13 +20,16 @@ class homepage extends StatelessWidget {
             width: 200,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(padding: EdgeInsets.all(55)),
-              Text(
-                "Welcome",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Text(
+                  "Welcome",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ],
@@ -35,17 +40,18 @@ class homepage extends StatelessWidget {
               Text("Email", style: TextStyle(fontSize: 15)),
             ],
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
-                hintText: ("Enter your username"),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                filled: true,
-                fillColor: Colors.white,
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    borderSide: BorderSide(color: Colors.white))),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: ("Enter your username"),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: InputBorder.none),
+            ),
           ),
           SizedBox(height: 10),
           Row(
@@ -54,17 +60,18 @@ class homepage extends StatelessWidget {
               Text("Password", style: TextStyle(fontSize: 15)),
             ],
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
-                hintText: ("Enter your password"),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                filled: true,
-                fillColor: Colors.white,
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    borderSide: BorderSide(color: Colors.white))),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: ("Enter your password"),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: InputBorder.none),
+            ),
           ),
           SizedBox(height: 10),
           Row(
@@ -121,9 +128,15 @@ class homepage extends StatelessWidget {
               Padding(padding: EdgeInsets.fromLTRB(70, 10, 20, 30)),
               Text("No account?", style: TextStyle(fontSize: 13)),
               SizedBox(width: 3),
-              Text("Sign up",
-                  style: TextStyle(
-                      fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => account1()));
+                },
+                child: Text("Sign up",
+                    style: TextStyle(
+                        fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+              ),
             ],
           ),
         ]));

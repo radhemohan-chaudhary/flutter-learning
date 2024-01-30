@@ -9,4 +9,10 @@ class MyRoutes {
   static String personalRoute = "/personalpage";
   static String accountRoute = "/acc1page";
   static String firstappRoute = "/firstapp";
+  static String userRoute = "/userpage";
+  static String addressRoute = "/addresspage";
+  static String settingRoute = "/settingpage";
+  static String pchangeRoute = "/pchange";
+  static String pverificationRoute = "pverification";
+  static String psuccessRoute = "psuccess";
 }

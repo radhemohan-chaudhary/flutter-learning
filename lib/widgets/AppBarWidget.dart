@@ -8,31 +8,18 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, MyRoutes.userRoute);
             },
-            child: Container(
-              height: 60,
-              width: 60,
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(60),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 3),
-                  )
-                ],
-              ),
-              child: Icon(CupertinoIcons.arrow_left),
+            child: CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage("assets/images/batman.png"),
             ),
           ),
           Text(
