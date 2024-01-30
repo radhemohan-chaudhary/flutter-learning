@@ -8,4 +8,5 @@ class MyRoutes {
   static String helloRoute = "/hellopage";
   static String personalRoute = "/personalpage";
   static String accountRoute = "/acc1page";
+  static String firstappRoute = "/firstapp";
 }

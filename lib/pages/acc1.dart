@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/pages/home_page.dart';
+import 'package:flutter_application_0/utils/routess.dart';
 
 class account1 extends StatelessWidget {
   const account1({super.key});
@@ -110,11 +111,8 @@ class account1 extends StatelessWidget {
                   SizedBox(height: 35),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => homepage(),
-                            ));
+                        Navigator.pushNamed(
+                            context, MyRoutes.verificationRoute);
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(400, 45),

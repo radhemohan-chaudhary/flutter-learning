@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.personalRoute: (context) => personal(),
         MyRoutes.accountRoute: (context) => account1(),
         MyRoutes.verificationRoute: (context) => account2(),
+        MyRoutes.firstappRoute: (context) => firstapp(),
       },
     );
     return materialApp;

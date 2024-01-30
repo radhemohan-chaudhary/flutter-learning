@@ -19,7 +19,7 @@ class homepage extends StatelessWidget {
           ),
           Row(
             children: [
-              Padding(padding: EdgeInsets.all(40)),
+              Padding(padding: EdgeInsets.all(55)),
               Text(
                 "Welcome",
                 style: TextStyle(
