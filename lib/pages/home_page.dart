@@ -44,10 +44,10 @@ class homepage extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             child: TextFormField(
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email_outlined),
+                  // prefixIcon: Icon(Icons.email_outlined),
                   hintText: ("Enter your username"),
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                      EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   filled: true,
                   fillColor: Colors.white,
                   border: InputBorder.none),
@@ -62,15 +62,18 @@ class homepage extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email_outlined),
-                  hintText: ("Enter your password"),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: InputBorder.none),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    // prefixIcon: Icon(Icons.email_outlined),
+                    hintText: ("Enter your password"),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: InputBorder.none),
+              ),
             ),
           ),
           SizedBox(height: 10),

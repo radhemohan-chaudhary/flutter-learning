@@ -22,7 +22,8 @@ class account1 extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           child: TextFormField(
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               filled: true,
               fillColor: Colors.white,
               border: InputBorder.none,
@@ -41,7 +42,7 @@ class account1 extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 filled: true,
                 fillColor: Colors.white,
                 border: InputBorder.none),
@@ -59,7 +60,7 @@ class account1 extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 filled: true,
                 fillColor: Colors.white,
                 border: InputBorder.none),
@@ -76,8 +77,9 @@ class account1 extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           child: TextFormField(
             decoration: InputDecoration(
+                hintText: "Day/Month/Year",
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 filled: true,
                 fillColor: Colors.white,
                 border: InputBorder.none),
@@ -95,7 +97,7 @@ class account1 extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 filled: true,
                 fillColor: Colors.white,
                 border: InputBorder.none),

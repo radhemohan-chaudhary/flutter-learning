@@ -45,9 +45,9 @@ class user extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 20),
                       Row(
                         children: [
                           InkWell(
@@ -66,19 +66,23 @@ class user extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text("Personal Info",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.personalRoute);
+                            },
+                            child: Text("Personal Info",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                )),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 20),
                       Row(
                         children: [
                           InkWell(
-                            onTap: () => Navigator.pushNamed(
-                                context, MyRoutes.orderhistoryRoute),
+                            onTap: () {},
                             child: Container(
                               height: 30,
                               width: 30,
@@ -92,14 +96,18 @@ class user extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text("Vouchers/Offers",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
+                          TextButton(
+                            onPressed: () {
+                              // Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                            },
+                            child: Text("Vouchers/Offers",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                )),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 20),
                       Row(
                         children: [
                           InkWell(
@@ -118,14 +126,19 @@ class user extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text("Addresses",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.addressRoute);
+                            },
+                            child: Text("Addresses",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                )),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 20),
                       Row(
                         children: [
                           InkWell(
@@ -144,19 +157,26 @@ class user extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text("Order History",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.orderhistoryRoute);
+                            },
+                            child: Text("Order History",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                )),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 20),
                       Row(
                         children: [
                           InkWell(
-                            onTap: () => Navigator.pushNamed(
-                                context, MyRoutes.homeRoute),
+                            onTap: () {
+                              // Navigator.pushNamed(
+                              //     context, MyRoutes.homeRoute);
+                            },
                             child: Container(
                               height: 30,
                               width: 30,
@@ -170,11 +190,16 @@ class user extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text("Help Center",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
+                          TextButton(
+                            onPressed: () {
+                              // Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                            },
+                            child: Text("Help Center",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                )),
+                          ),
                         ],
                       ),
                     ]),
@@ -193,8 +218,8 @@ class user extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(height: 10),
                     Row(
                       children: [
                         InkWell(
@@ -213,14 +238,18 @@ class user extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text("Setting",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontSize: 16,
-                            )),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, MyRoutes.settingRoute);
+                          },
+                          child: Text("Setting",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              )),
+                        ),
                       ],
                     ),
-                    SizedBox(height: 20),
                     Row(
                       children: [
                         InkWell(
@@ -239,11 +268,16 @@ class user extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text("Logout ",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontSize: 16,
-                            )),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, MyRoutes.homeRoute);
+                          },
+                          child: Text("Logout",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              )),
+                        ),
                       ],
                     ),
                   ],

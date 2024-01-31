@@ -19,15 +19,21 @@ class hello extends StatelessWidget {
               SizedBox(height: 15),
               ClipRRect(
                 borderRadius: BorderRadius.circular(50),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search),
-                      hintText: ("Search what you want... "),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: InputBorder.none),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        suffixIcon: Icon(
+                          Icons.search,
+                          size: 35,
+                        ),
+                        hintText: ("Search what you want... "),
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                        filled: true,
+                        // fillColor: Colors.white,
+                        border: InputBorder.none),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
@@ -40,15 +46,437 @@ class hello extends StatelessWidget {
                   SizedBox(width: 180),
                   Opacity(
                     opacity: 0.5,
-                    child: Text("See More", style: TextStyle(fontSize: 12)),
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                      },
+                      child: Text("See More",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                          )),
+                    ),
+                    // Text("See More", style: TextStyle(fontSize: 12)),
                   ),
                 ],
               ),
-              Image.asset(
-                "assets/images/food.png",
-                width: 280,
+              Container(
                 height: 200,
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    SizedBox(width: 17),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/Yakisoba Noodles.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Yakisoba Noodles",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Noodles with pork",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.100.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/biryani.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Chicken Biryani",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Kathmandu Biryani Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.150.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/burger.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Chicken Burger",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Burger Express",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.120.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/burger2.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Buff Burger",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Burger Express",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.110.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/Coconut Chicken curry.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Coconut Chicken Curry",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Lalitpur Khana Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.250.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/fry.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "French Fry",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Upper Ground Khaja Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.80.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/kc2.png",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Chicken Khana Set",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Lalitpur Khana Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.300.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
+
               Row(
                 children: [
                   SizedBox(width: 15),
@@ -58,16 +486,443 @@ class hello extends StatelessWidget {
                   SizedBox(width: 180),
                   Opacity(
                     opacity: 0.5,
-                    child: Text("See More", style: TextStyle(fontSize: 12)),
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                      },
+                      child: Text("See More",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                          )),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              Image.asset(
-                "assets/images/food.png",
+
+              Container(
                 height: 200,
-                width: 280,
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    SizedBox(width: 17),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/m1.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Chicken Momo Steam",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Upper Ground Khana Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.130.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/m2.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Buff Momo Steam",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Lower Ground Khaja Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.120.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/mk1.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Mutton Khana Set",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Baje Ko Bhansa Ghar",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.350.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/n1.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Thai Fry Noodles",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Noodles with pork",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.120.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/n2.jpeg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Noodles",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Noodles with pork",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.130.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/n3.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Noodles",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Noodles with pork",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.140.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0xffa9411d)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: CircleAvatar(
+                                radius: 45,
+                                backgroundColor: Colors.white,
+                                backgroundImage: AssetImage(
+                                  "assets/images/pizza.jpg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Chicken Spicy Pizza",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "Burger House",
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xfff8bf40),
+                              ),
+                            ),
+                            Text(
+                              "Rs.370.00",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () => Navigator.pushNamed(
+                                  context, MyRoutes.cartRoute),
+                              child: Icon(
+                                CupertinoIcons.bag_fill,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
+
+              // SizedBox(height: 15),
+              // Image.asset(
+              //   "assets/images/food.png",
+              //   height: 200,
+              //   width: 280,
+              // ),
             ],
           ),
         ),
