@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/first.dart';
+import 'package:flutter_application_0/utils/routess.dart';
 
 class homepage extends StatelessWidget {
   const homepage({super.key});
@@ -8,12 +9,13 @@ class homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xffffcb01),
-        appBar: AppBar(
-          backgroundColor: Color(0xffffcb01),
-        ),
         body:
             ListView(padding: EdgeInsets.symmetric(horizontal: 30), children: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5)),
+          Placeholder(
+            fallbackHeight: 100,
+            color: Colors.transparent,
+          ),
           Image.asset(
             "assets/images/log.png",
             height: 200,
@@ -76,13 +78,22 @@ class homepage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
           Row(
             children: [
-              Padding(padding: EdgeInsets.all(10)),
-              Text("Forgot Password?", style: TextStyle(fontSize: 15)),
+              Padding(padding: EdgeInsets.all(0)),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.RecoveryRoute);
+                },
+                child: Text("Forgot Password?",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color.fromARGB(255, 228, 98, 98),
+                    )),
+              ),
             ],
           ),
+          SizedBox(height: 10),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(

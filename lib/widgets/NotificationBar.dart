@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CartBarWidget extends StatelessWidget {
-  const CartBarWidget({super.key});
+class notificationbar extends StatelessWidget {
+  const notificationbar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class CartBarWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "My Cart",
+            "Notifications",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,

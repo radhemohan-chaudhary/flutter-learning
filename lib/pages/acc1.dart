@@ -41,11 +41,12 @@ class account1 extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           child: TextFormField(
             decoration: InputDecoration(
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                filled: true,
-                fillColor: Colors.white,
-                border: InputBorder.none),
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              filled: true,
+              fillColor: Colors.white,
+              border: InputBorder.none,
+            ),
           ),
         ),
         SizedBox(height: 5),

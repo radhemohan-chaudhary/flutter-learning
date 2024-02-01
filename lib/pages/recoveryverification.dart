@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+
+import 'package:flutter_application_0/utils/routess.dart';
+import 'package:flutter_application_0/widgets/RecoveryBarWidget.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pinput/pinput.dart';
+
+class recoveryverification extends StatelessWidget {
+  const recoveryverification({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xffffcb01),
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            child: Padding(
+              padding: const EdgeInsets.all(0),
+              child: ListView(
+                children: [
+                  RecoveryBarWidget(),
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    SizedBox(height: 140),
+                    Text("Enter the Confirmation code",
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ]),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      width: 350,
+                      height: 400,
+                      color: Colors.white,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text("Enter the 6-digit code we have sent to:",
+                              style: GoogleFonts.montserrat(fontSize: 16),
+                              textAlign: TextAlign.center),
+                          Text("abc@gmail.com",
+                              style: GoogleFonts.montserrat(fontSize: 16),
+                              textAlign: TextAlign.center),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text("Resend Code",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Pinput(
+                            onCompleted: (pin) => print(pin),
+                            length: 6,
+                            defaultPinTheme: PinTheme(
+                              width: 40,
+                              height: 56,
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(10)),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, MyRoutes.newpasswordRoute);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                fixedSize: Size(200, 45),
+                                primary: Color(0xff302e2d),
+                                onPrimary: Colors.white,
+                              ),
+                              child: Text("Confirm")),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
+  }
+}

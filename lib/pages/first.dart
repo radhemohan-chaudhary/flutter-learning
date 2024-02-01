@@ -8,14 +8,18 @@ class firstapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffffcb01),
-      appBar: AppBar(
-        backgroundColor: Color(0xffffcb01),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Color(0xffffcb01),
+      // ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: ListView(
             children: [
+              Placeholder(
+                fallbackHeight: 60,
+                color: Colors.transparent,
+              ),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, MyRoutes.helloRoute);
@@ -50,7 +54,7 @@ class firstapp extends StatelessWidget {
               SizedBox(height: 6),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, MyRoutes.helloRoute);
+                  // Navigator.pushNamed(context, MyRoutes.helloRoute);
                 },
                 child: Container(
                   height: 180,
@@ -82,7 +86,7 @@ class firstapp extends StatelessWidget {
               SizedBox(height: 6),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, MyRoutes.helloRoute);
+                  // Navigator.pushNamed(context, MyRoutes.helloRoute);
                 },
                 child: Container(
                   height: 180,

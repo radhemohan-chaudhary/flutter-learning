@@ -15,4 +15,10 @@ class MyRoutes {
   static String pchangeRoute = "/pchange";
   static String pverificationRoute = "pverification";
   static String psuccessRoute = "psuccess";
+  static String paymentRoute = "payment";
+  static String RecoveryRoute = "password";
+  static String recoveryverificationRoute = "recoveryverification";
+  static String newpasswordRoute = "newpassword";
+  static String newpsuccessRoute = "newpsuccess";
+  static String setnotificationRoute = "setnotification";
 }

@@ -31,9 +31,19 @@ class setting extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        SizedBox(
-                          width: 50,
+                        // SizedBox(
+                        //   width: 50,
+                        // ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                          },
+                          child: Icon(
+                            CupertinoIcons.mail,
+                            color: Color(0xffff7f50),
+                          ),
                         ),
+
                         TextButton(
                           onPressed: () {
                             Navigator.pushNamed(context, MyRoutes.pchangeRoute);
@@ -49,23 +59,20 @@ class setting extends StatelessWidget {
                     Row(
                       children: [
                         InkWell(
-                          onTap: () =>
-                              Navigator.pushNamed(context, MyRoutes.homeRoute),
-                          child: Container(
-                            height: 30,
-                            width: 50,
-                            padding: EdgeInsets.only(right: 20),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                            ),
-                            child: Icon(
-                              CupertinoIcons.bell,
-                              color: Color(0xffff7f50),
-                            ),
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MyRoutes.setnotificationRoute);
+                          },
+                          child: Icon(
+                            CupertinoIcons.bell,
+                            color: Color(0xffff7f50),
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, MyRoutes.setnotificationRoute);
+                          },
                           child: Text("Notifications",
                               style: TextStyle(
                                 fontSize: 16,
@@ -76,8 +83,17 @@ class setting extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        SizedBox(
-                          width: 50,
+                        // SizedBox(
+                        //   width: 50,
+                        // ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRoutes.pchangeRoute);
+                          },
+                          child: Icon(
+                            CupertinoIcons.square_arrow_down_on_square,
+                            color: Color(0xffff7f50),
+                          ),
                         ),
                         TextButton(
                           onPressed: () {},

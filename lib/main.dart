@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/pages/Order_History.dart';
+import 'package:flutter_application_0/pages/Password.dart';
+import 'package:flutter_application_0/pages/Payment.dart';
 import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/acc2.dart';
 import 'package:flutter_application_0/pages/address.dart';
@@ -7,10 +9,14 @@ import 'package:flutter_application_0/pages/cart.dart';
 import 'package:flutter_application_0/pages/first.dart';
 import 'package:flutter_application_0/pages/hello.dart';
 import 'package:flutter_application_0/pages/home_page.dart';
+import 'package:flutter_application_0/pages/new_passwoord.dart';
+import 'package:flutter_application_0/pages/newpsuccess.dart';
 import 'package:flutter_application_0/pages/pchange.dart';
 import 'package:flutter_application_0/pages/personal.dart';
 import 'package:flutter_application_0/pages/psuccess.dart';
 import 'package:flutter_application_0/pages/pverification.dart';
+import 'package:flutter_application_0/pages/recoveryverification.dart';
+import 'package:flutter_application_0/pages/setnotification.dart';
 import 'package:flutter_application_0/pages/setting.dart';
 import 'package:flutter_application_0/pages/user.dart';
 import 'package:flutter_application_0/utils/routess.dart';
@@ -47,7 +53,13 @@ class MyApp extends StatelessWidget {
         MyRoutes.settingRoute: (context) => setting(),
         MyRoutes.pchangeRoute: (context) => pchange(),
         MyRoutes.pverificationRoute: (context) => pverification(),
-        MyRoutes.psuccessRoute: (context) => psuccess()
+        MyRoutes.psuccessRoute: (context) => psuccess(),
+        MyRoutes.paymentRoute: (context) => payment(),
+        MyRoutes.RecoveryRoute: (context) => Recovery(),
+        MyRoutes.recoveryverificationRoute: (context) => recoveryverification(),
+        MyRoutes.newpasswordRoute: (context) => newpassword(),
+        MyRoutes.newpsuccessRoute: (context) => newpsuccess(),
+        MyRoutes.setnotificationRoute: (context) => setnotification(),
       },
     );
     return materialApp;

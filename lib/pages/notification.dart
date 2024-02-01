@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_0/widgets/NotificationBar.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -7,238 +8,95 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffffcc00),
-        body: ListView(
-          children: [
-            SingleChildScrollView(
-                child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 10,
-              ),
-              child: Column(
+      backgroundColor: Color(0xffffcc00),
+      body: ListView(
+        children: [
+          notificationbar(),
+          Padding(
+            padding: const EdgeInsets.all(40),
+            child: Placeholder(
+              color: Colors.transparent,
+              fallbackHeight: 630,
+              child: _notifications(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _notifications extends StatefulWidget {
+  const _notifications({super.key});
+
+  @override
+  State<_notifications> createState() => __notificationsState();
+}
+
+class __notificationsState extends State<_notifications> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.only(bottom: 5),
+        child: Container(
+          height: 85,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20), color: Colors.white),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 5),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Container(
-                            height: 60,
-                            width: 60,
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(60),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 10,
-                                  offset: Offset(0, 3),
-                                )
-                              ],
-                            ),
-                            child: Icon(CupertinoIcons.arrow_left),
-                          ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "FoodBuddy",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 60,
-                            vertical: 15,
-                          ),
-                          child: Text(
-                            "Notifications",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                      ),
+                      Text(
+                        "21 Jan,2024",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 12,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: 30,
-                      bottom: 10,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    child: Container(
-                        alignment: Alignment.topLeft,
-                        height: 500,
-                        width: double.infinity,
-                        // width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          color: Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(15),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 10,
-                              offset: Offset(0, 3),
-                            )
-                          ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: 230,
+                        child: Text(
+                          "Order from 2-5 PM and get free delivery on orders above Rs 1000.",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
                         ),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 100,
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      // width: double.infinity,
-                                      // width: MediaQuery.of(context).size.width,
-                                      width: 250,
-                                      height: 100,
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "FoodBuddy",
-                                              style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Text(
-                                              "Free delivery hour from 6-8 PM",
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                          ]),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Container(
-                                        child: Text(
-                                          "21 Jan,2024",
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 100,
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 250,
-                                      height: 100,
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "FoodBuddy",
-                                              style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Text(
-                                              "Order from 2-5 PM and get free delivery on orders above Rs 1000.",
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                          ]),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Container(
-                                        child: Text(
-                                          "1:50 PM",
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 100,
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      // width: double.infinity,
-                                      height: 100,
-                                      width: 250,
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "FoodBuddy",
-                                              style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Text(
-                                              "Order from 2-5 PM and get free delivery on orders above Rs 1000.",
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                          ]),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Container(
-                                        child: Text(
-                                          "1:50 PM",
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              color: Colors.black,
-                            ),
-                          ],
-                        )),
-                  )
-                ],
-              ),
-            )),
-          ],
-        ));
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Icon(
+                          CupertinoIcons.delete,
+                          size: 30,
+                          color: Colors.redAccent,
+                        ),
+                      )
+                    ],
+                  ),
+                ]),
+          ),
+        ),
+      ),
+    );
   }
 }

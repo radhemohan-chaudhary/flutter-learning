@@ -263,7 +263,7 @@ class user extends StatelessWidget {
                               color: Colors.white,
                             ),
                             child: Icon(
-                              CupertinoIcons.arrow_right_square,
+                              CupertinoIcons.square_arrow_left,
                               color: Color(0xffff7f50),
                             ),
                           ),

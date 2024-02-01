@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_0/utils/routess.dart';
 import 'package:flutter_application_0/widgets/CartBarWidget.dart';
 
 class CartPage extends StatelessWidget {
@@ -13,15 +14,30 @@ class CartPage extends StatelessWidget {
         children: [
           CartBarWidget(),
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           Placeholder(
             color: Colors.transparent,
-            fallbackHeight: 330,
+            fallbackHeight: 300,
             child: _cartlist(),
           ),
-          SizedBox(),
+          SizedBox(
+            height: 60,
+          ),
           _cartTotal(),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.paymentRoute);
+                },
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size(200, 60),
+                  primary: Color.fromARGB(255, 232, 149, 149),
+                  onPrimary: Colors.white,
+                ),
+                child: Text("Checkout")),
+          ),
         ],
       ),
     );
@@ -160,9 +176,9 @@ class __cartlistState extends State<_cartlist> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 5,
+        itemCount: 10,
         itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
               child: Container(
                 height: 90,
                 decoration: BoxDecoration(
@@ -233,6 +249,7 @@ class __cartlistState extends State<_cartlist> {
                         child: Icon(
                           CupertinoIcons.delete,
                           size: 30,
+                          color: Colors.redAccent,
                         ),
                       )
                     ],

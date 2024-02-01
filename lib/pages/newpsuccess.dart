@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/utils/routess.dart';
-import 'package:flutter_application_0/widgets/SettingBarWidget.dart';
 
-class psuccess extends StatelessWidget {
-  const psuccess({super.key});
+import 'package:flutter_application_0/widgets/UserBarWidget.dart';
+
+class newpsuccess extends StatelessWidget {
+  const newpsuccess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,10 @@ class psuccess extends StatelessWidget {
       backgroundColor: Color(0xffffcc00),
       body: ListView(
         children: [
-          settingBarWidget(),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: UserBarWidget(),
+          ),
           Container(
               height: 600,
               decoration: BoxDecoration(
@@ -50,7 +54,7 @@ class psuccess extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.settingRoute);
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(100, 50),
