@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/utils/routess.dart';
 
@@ -26,7 +27,10 @@ class newpassword extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             child: TextFormField(
               decoration: InputDecoration(
-                  // hintText: "Day/Month/Year",
+                  suffixIcon: IconButton(
+                    icon: Icon(CupertinoIcons.eye_slash_fill),
+                    onPressed: () {},
+                  ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   filled: true,
@@ -45,6 +49,10 @@ class newpassword extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             child: TextFormField(
               decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    icon: Icon(CupertinoIcons.eye_slash_fill),
+                    onPressed: () {},
+                  ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   filled: true,
@@ -59,7 +67,7 @@ class newpassword extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(400, 45),
-                primary: Color.fromARGB(255, 232, 149, 149),
+                primary: Color(0xffff7f50),
                 onPrimary: Colors.white,
               ),
               child: Text("Update password")),

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HistoryBarWedget extends StatelessWidget {
-  const HistoryBarWedget({super.key});
+class personalbar extends StatelessWidget {
+  const personalbar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -35,7 +35,7 @@ class HistoryBarWedget extends StatelessWidget {
             ),
           ),
           Text(
-            "Order History",
+            "Peresonal Information",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,

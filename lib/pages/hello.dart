@@ -161,7 +161,8 @@ class hello extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () => Navigator.pushNamed(context, MyRoutes.personalRoute),
+              onTap: () =>
+                  Navigator.pushNamed(context, MyRoutes.favouritesRoute),
               child: Container(
                 height: 40,
                 width: 40,
@@ -275,9 +276,16 @@ class _popular extends StatelessWidget {
                     textAlign: TextAlign.center,
                   )));
                 },
-                child: Icon(
-                  CupertinoIcons.bag_fill,
-                  color: Colors.white,
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 2, color: Colors.white)),
+                  child: Icon(
+                    CupertinoIcons.bag_fill,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
@@ -350,9 +358,16 @@ class _offer extends StatelessWidget {
                     textAlign: TextAlign.center,
                   )));
                 },
-                child: Icon(
-                  CupertinoIcons.bag_fill,
-                  color: Colors.white,
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 2, color: Colors.white)),
+                  child: Icon(
+                    CupertinoIcons.bag_fill,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

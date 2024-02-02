@@ -19,7 +19,7 @@ class pverification extends StatelessWidget {
               settingBarWidget(),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(height: 140),
-                Text("Enter the verification code",
+                Text("Enter the confirmation code",
                     style:
                         TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
               ]),
@@ -71,10 +71,10 @@ class pverification extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             fixedSize: Size(200, 45),
-                            primary: Color.fromARGB(255, 232, 149, 149),
+                            primary: Color(0xffff7f50),
                             onPrimary: Colors.white,
                           ),
-                          child: Text("Conform")),
+                          child: Text("Confirm")),
                     ],
                   ),
                 ),

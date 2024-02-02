@@ -149,7 +149,7 @@ class payment extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(200, 60),
-                  primary: Color.fromARGB(255, 232, 149, 149),
+                  primary: Color(0xffff7f50),
                   onPrimary: Colors.white,
                 ),
                 child: Text("Proceed to Payment")),

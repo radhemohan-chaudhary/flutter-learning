@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HistoryBarWedget extends StatelessWidget {
-  const HistoryBarWedget({super.key});
+class favouriteBarWedget extends StatelessWidget {
+  const favouriteBarWedget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class HistoryBarWedget extends StatelessWidget {
             ),
           ),
           Text(
-            "Order History",
+            "Favourites",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,

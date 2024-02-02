@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/utils/routess.dart';
 import 'package:flutter_application_0/widgets/SettingBarWidget.dart';
@@ -36,28 +37,34 @@ class pchange extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     child: TextFormField(
                       decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          suffixIcon: IconButton(
+                            icon: Icon(CupertinoIcons.eye_slash_fill),
+                            onPressed: () {},
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
                           filled: true,
                           fillColor: Colors.white,
                           border: InputBorder.none),
                     ),
                   ),
-                  SizedBox(
-                    height: 15,
-                  ),
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       Padding(padding: EdgeInsets.all(10)),
-                      Text("Conform password", style: TextStyle(fontSize: 16)),
+                      Text("Confirm password", style: TextStyle(fontSize: 16)),
                     ],
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: TextFormField(
                       decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          suffixIcon: IconButton(
+                            icon: Icon(CupertinoIcons.eye_slash_fill),
+                            onPressed: () {},
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
                           filled: true,
                           fillColor: Colors.white,
                           border: InputBorder.none),
@@ -73,7 +80,7 @@ class pchange extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(400, 45),
-                        primary: Color.fromARGB(255, 232, 149, 149),
+                        primary: Color(0xffff7f50),
                         onPrimary: Colors.white,
                       ),
                       child: Text("Update password")),

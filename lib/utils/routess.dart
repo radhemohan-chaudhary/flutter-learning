@@ -21,4 +21,6 @@ class MyRoutes {
   static String newpasswordRoute = "newpassword";
   static String newpsuccessRoute = "newpsuccess";
   static String setnotificationRoute = "setnotification";
+  static String newaddressRoute = "newaddress";
+  static String favouritesRoute = "favourites";
 }

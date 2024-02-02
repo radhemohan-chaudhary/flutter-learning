@@ -6,10 +6,12 @@ import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/acc2.dart';
 import 'package:flutter_application_0/pages/address.dart';
 import 'package:flutter_application_0/pages/cart.dart';
+import 'package:flutter_application_0/pages/favourites.dart';
 import 'package:flutter_application_0/pages/first.dart';
 import 'package:flutter_application_0/pages/hello.dart';
 import 'package:flutter_application_0/pages/home_page.dart';
 import 'package:flutter_application_0/pages/new_passwoord.dart';
+import 'package:flutter_application_0/pages/newaddress.dart';
 import 'package:flutter_application_0/pages/newpsuccess.dart';
 import 'package:flutter_application_0/pages/pchange.dart';
 import 'package:flutter_application_0/pages/personal.dart';
@@ -60,6 +62,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.newpasswordRoute: (context) => newpassword(),
         MyRoutes.newpsuccessRoute: (context) => newpsuccess(),
         MyRoutes.setnotificationRoute: (context) => setnotification(),
+        MyRoutes.newaddressRoute: (contex) => newaddress(),
+        MyRoutes.favouritesRoute: (context) => favourites(),
       },
     );
     return materialApp;

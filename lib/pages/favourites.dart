@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_0/widgets/HistoryBarWedget.dart';
+import 'package:flutter_application_0/widgets/FavouritesBar.dart';
 
-class Order_History extends StatelessWidget {
-  const Order_History({super.key});
+class favourites extends StatelessWidget {
+  const favourites({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class Order_History extends StatelessWidget {
       backgroundColor: Color(0xffffcc00),
       body: ListView(
         children: [
-          HistoryBarWedget(),
+          favouriteBarWedget(),
           Padding(
             padding: const EdgeInsets.all(30),
             child: Placeholder(
               fallbackHeight: 377,
               color: Colors.transparent,
-              child: _history(),
+              child: _favourites(),
             ),
           ),
           SizedBox(
@@ -25,10 +25,11 @@ class Order_History extends StatelessWidget {
             width: double.infinity,
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.all(30),
+                padding: const EdgeInsets.only(
+                    left: 30, top: 30, bottom: 30, right: 30),
                 child: Container(
                   child: Text(
-                    "Taste your tasteful history in this exclusive zone.",
+                    "You can add your favourites here.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
@@ -45,14 +46,14 @@ class Order_History extends StatelessWidget {
   }
 }
 
-class _history extends StatefulWidget {
-  const _history({super.key});
+class _favourites extends StatefulWidget {
+  const _favourites({super.key});
 
   @override
-  State<_history> createState() => __historyState();
+  State<_favourites> createState() => __historyState();
 }
 
-class __historyState extends State<_history> {
+class __historyState extends State<_favourites> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -71,6 +72,10 @@ class __historyState extends State<_history> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Icon(
+                  CupertinoIcons.heart_fill,
+                  color: Colors.black,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: Column(
@@ -88,7 +93,7 @@ class __historyState extends State<_history> {
                       Opacity(
                         opacity: 0.5,
                         child: Text(
-                          "Caffe latte,muffin...",
+                          "New Baneshwor",
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.black,
@@ -100,16 +105,6 @@ class __historyState extends State<_history> {
                 ),
                 SizedBox(
                   width: 80,
-                ),
-                Opacity(
-                  opacity: 0.5,
-                  child: Text(
-                    "27 July",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
                 InkWell(
                   onTap: () {},

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_0/pages/acc1.dart';
 import 'package:flutter_application_0/pages/first.dart';
@@ -7,10 +8,20 @@ class homepage extends StatelessWidget {
   const homepage({super.key});
   @override
   Widget build(BuildContext context) {
+    var inputDecoration = InputDecoration(
+        suffixIcon: IconButton(
+          icon: Icon(CupertinoIcons.eye_slash_fill),
+          onPressed: () {},
+        ),
+        hintText: ("Enter your password"),
+        contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        filled: true,
+        fillColor: Colors.white,
+        border: InputBorder.none);
     return Scaffold(
         backgroundColor: Color(0xffffcb01),
         body:
-            ListView(padding: EdgeInsets.symmetric(horizontal: 30), children: [
+            ListView(padding: EdgeInsets.symmetric(horizontal: 50), children: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5)),
           Placeholder(
             fallbackHeight: 100,
@@ -67,14 +78,7 @@ class homepage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 0),
               child: TextFormField(
-                decoration: InputDecoration(
-                    // prefixIcon: Icon(Icons.email_outlined),
-                    hintText: ("Enter your password"),
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: InputBorder.none),
+                decoration: inputDecoration,
               ),
             ),
           ),
@@ -88,7 +92,7 @@ class homepage extends StatelessWidget {
                 child: Text("Forgot Password?",
                     style: TextStyle(
                       fontSize: 13,
-                      color: Color.fromARGB(255, 228, 98, 98),
+                      color: Color(0xffff7f50),
                     )),
               ),
             ],
@@ -104,7 +108,7 @@ class homepage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(400, 45),
-                primary: Color.fromARGB(255, 232, 149, 149),
+                primary: Color(0xffff7f50),
                 onPrimary: Colors.white,
               ),
               child: Text("Log In")),
@@ -118,7 +122,6 @@ class homepage extends StatelessWidget {
                   ));
             },
             style: ElevatedButton.styleFrom(
-              // fixedSize: Size(100, 45),
               onPrimary: Colors.black,
             ),
             child: Row(
@@ -148,8 +151,7 @@ class homepage extends StatelessWidget {
                       context, MaterialPageRoute(builder: (_) => account1()));
                 },
                 child: Text("Sign up",
-                    style: TextStyle(
-                        fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+                    style: TextStyle(fontSize: 13, color: Color(0xffff7f50))),
               ),
             ],
           ),

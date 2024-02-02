@@ -39,7 +39,7 @@ class setting extends StatelessWidget {
                             Navigator.pushNamed(context, MyRoutes.pchangeRoute);
                           },
                           child: Icon(
-                            CupertinoIcons.mail,
+                            CupertinoIcons.lock,
                             color: Color(0xffff7f50),
                           ),
                         ),
@@ -91,7 +91,7 @@ class setting extends StatelessWidget {
                             Navigator.pushNamed(context, MyRoutes.pchangeRoute);
                           },
                           child: Icon(
-                            CupertinoIcons.square_arrow_down_on_square,
+                            CupertinoIcons.globe,
                             color: Color(0xffff7f50),
                           ),
                         ),
